@@ -1,4 +1,4 @@
-name: Run Tests on Push or Pull Request to Main
+name: Run Tests on Module2-Calculator
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.12'  # Set your desired Python version
+          python-version: '3.12'  # Use Python 3.12
 
       - name: Install dependencies from requirements.txt
         run: |
@@ -29,4 +29,5 @@ jobs:
 
       - name: Run tests with pytest and enforce 100% coverage
         run: |
-          pytest --cov=app --cov-fail-under=100
+          pytest Module2-Calculator/tests --cov=Module2-Calculator/app --cov-fail-under=100
+
