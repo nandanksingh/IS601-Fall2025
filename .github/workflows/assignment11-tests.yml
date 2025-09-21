@@ -1,0 +1,38 @@
+name: Assignment11 Tests
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'Assignment11/**'
+      - '.github/workflows/assignment11-tests.yml'
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'Assignment11/**'
+      - '.github/workflows/assignment11-tests.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies from requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest pytest-cov
+
+      - name: Run tests with pytest and enforce 100% coverage
+        run: |
+          pytest Assignment11/tests --cov=Assignment11/app --cov-fail-under=100
