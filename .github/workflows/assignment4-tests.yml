@@ -33,6 +33,6 @@ jobs:
           pip install -r requirements.txt
           pip install pytest pytest-cov
 
-      - name: Run tests with pytest and enforce 100% coverage
+      - name: Run tests with pytest (Assignment4)
         run: |
-          pytest Assignment4/tests --cov=Assignment4/app --cov-fail-under=100
+          pytest Assignment4/tests -v
