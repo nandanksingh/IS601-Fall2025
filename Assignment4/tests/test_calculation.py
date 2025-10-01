@@ -1,3 +1,9 @@
+# ----------------------------------------------------------
+# Author: Nandan Kumar
+# Date: 09/30/2025
+# Project: Assignment 4 - Professional Calculator CLI
+# ----------------------------------------------------------
+
 """
 Advanced unit tests for Calculation classes and CalculationFactory.
 

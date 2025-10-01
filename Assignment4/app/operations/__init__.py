@@ -1,3 +1,9 @@
+# ----------------------------------------------------------
+# Author: Nandan Kumar
+# Date: 09/30/2025
+# Project: Assignment 4 - Professional Calculator CLI
+# ----------------------------------------------------------
+
 # This file is called "operations.py". 
 # It has four math functions: add, subtract, multiply, and divide.
 # Think of them as tools to do basic math.

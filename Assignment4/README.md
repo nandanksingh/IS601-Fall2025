@@ -1,71 +1,88 @@
-
 # Assignment 4 – Professional Calculator Command-Line Application
 
 ## Overview
 
-This project implements a **professional-grade calculator** as a Python command-line application. It emphasizes clean architecture, object-oriented design, comprehensive error handling, and automated testing. The calculator supports basic arithmetic operations and demonstrates both **LBYL (Look Before You Leap)** and **EAFP (Easier to Ask Forgiveness than Permission)** programming paradigms.
+This project is a **professional calculator** built as a Python command-line tool. It demonstrates how to apply **object-oriented programming (OOP)**, clean design, comprehensive error handling, and automated testing in practice.
 
-The code follows modular design principles, separating concerns across packages (`calculator`, `calculation`, `operations`) to ensure maintainability and reusability.
+The calculator supports the four main arithmetic operations (add, subtract, multiply, divide) and follows two important coding styles:
+
+* **LBYL (Look Before You Leap)** → check before acting
+* **EAFP (Easier to Ask Forgiveness than Permission)** → try and handle errors gracefully
+
+The codebase is modular, organized into three main packages:
+
+* `calculator` → REPL interface
+* `calculation` → logic for creating and managing calculations
+* `operations` → individual operation classes
+
+This structure makes the code easy to maintain, extend, and reuse.
 
 
 ## Setup Instructions
 
-1. **Repository**
+1. Open the project folder:   cd IS601-Fall2025/Assignment4
 
-   cd IS601-Fall2025/Assignment4
-
-2. **Create and Activate a Virtual Environment**
-
+2. Create and activate a virtual environment: 
    python3 -m venv venv
-   source venv/bin/activate   
+   source venv/bin/activate
 
-3. **Install Dependencies**
-
-   pip install -r requirements.txt
+3. Install dependencies:    pip install -r requirements.txt
 
 
-## Usage Instructions
+## Usage
 
-To run the calculator from the terminal:  python main.py
+Run the calculator: python main.py
 
-Once started, the calculator enters a **REPL mode** (Read-Eval-Print Loop). You can type commands such as:
-
-add 5 3
-subtract 10 4
-multiply 7 6
-divide 20 5
+Once started, the calculator enters **REPL mode**. You can type commands such as:
+add 5 3  
+subtract 10 4  
+multiply 7 6  
+divide 20 5  
 
 ### Special Commands
 
-* `help` → Displays instructions and supported operations
-* `history` → Shows all calculations from the session
-* `exit` → Exits the calculator
+* `help` → Show instructions and available operations
+* `history` → Show all calculations in the current session
+* `exit` → Quit the calculator
 
+
+## Error Handling
+
+The program includes strong error handling for:
+
+* Invalid or missing input format
+* Division by zero
+* Unexpected exceptions (with friendly messages)
+
+This ensures the calculator is user-friendly and resilient.
+
+---
 
 ## Testing
 
-This project uses **pytest** with coverage to ensure correctness.
+Testing is done using **pytest** with both unit and parameterized tests.
 
-Run all tests:  pytest
+Run all tests: pytest
 
-
-Run tests with coverage report:
-
-pytest --cov=app --cov-report=term-missing
+Run tests with coverage: pytest --cov=app --cov-report=term-missing
 
 
-The goal is **100% coverage**, enforced through GitHub Actions CI.
+Achieves **100% test coverage**, including edge cases.
+GitHub Actions CI is configured to run tests automatically on every push and enforce coverage requirements.
 
 
 ## Reflection
 
-Building this project helped me strengthen my understanding of **object-oriented programming** and the **four pillars**:
+Working on this project improved my ability to apply advanced OOP in real code. I practiced all four pillars of OOP:
 
-* **Abstraction** – separating what operations do from how they are implemented.
-* **Encapsulation** – keeping calculation details within well-defined classes.
-* **Inheritance** – reusing structure across different calculation types.
-* **Polymorphism** – allowing all calculations to be executed consistently through a shared interface.
+* **Abstraction** – separating what operations do from how they are done
+* **Encapsulation** – keeping logic within classes
+* **Inheritance** – reusing code across calculation types
+* **Polymorphism** – allowing consistent execution across different operations
 
-Through this assignment, I also learned the importance of **error handling** in professional applications and how automated testing ensures confidence in code quality. Overall, this project connects academic learning with real-world practices in software development.
+Testing was the most challenging part — especially for user input, error handling, and exit conditions. I learned how to use **monkeypatching** to simulate input and exceptions, and **subprocess testing** to cover the `__main__` entry point. These techniques gave me a deeper appreciation of how testing ensures code quality in professional applications.
 
+Overall, this project strengthened my skills in OOP design, testing, and error handling, while also teaching me how to deliver production-quality code with confidence.
+
+---
 

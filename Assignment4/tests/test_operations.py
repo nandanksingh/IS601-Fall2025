@@ -1,3 +1,9 @@
+# ----------------------------------------------------------
+# Author: Nandan Kumar
+# Date: 09/30/2025
+# Project: Assignment 4 - Professional Calculator CLI
+# ----------------------------------------------------------
+
 """tests/test_operations.py
 
 Unit tests for the Operations class.
